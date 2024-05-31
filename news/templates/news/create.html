@@ -1,0 +1,18 @@
+{% extends 'main/sample.html' %}
+<!-- ___________________ -->
+{% block title %}create{% endblock %}
+<!-- ___________________ -->
+{% block body %}
+<div class="features">
+	<h1>Добавление новости</h1>
+	<form method="post">
+		{% csrf_token %}<!-- ___________________ -->
+		{{ form.title }}<br />
+		{{ form.anons }}<br />
+		{{ form.text }}<br />
+		{{ form.date }}<br />
+		<span>{{ error }}</span>
+		<button class="btn btn-info" type="submit">Опубликовать</button>
+	</form>
+</div>
+{% endblock %}
